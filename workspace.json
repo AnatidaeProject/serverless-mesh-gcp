@@ -1,7 +1,154 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "moleculer-discoverer-firebase": {
+      "root": "libs/moleculer-discoverer-firebase",
+      "sourceRoot": "libs/moleculer-discoverer-firebase/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/moleculer-discoverer-firebase/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/moleculer-discoverer-firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/moleculer-discoverer-firebase",
+            "tsConfig": "libs/moleculer-discoverer-firebase/tsconfig.lib.json",
+            "packageJson": "libs/moleculer-discoverer-firebase/package.json",
+            "main": "libs/moleculer-discoverer-firebase/src/index.ts",
+            "assets": ["libs/moleculer-discoverer-firebase/*.md"]
+          }
+        }
+      }
+    },
+    "moleculer-transport-pubsub": {
+      "root": "libs/moleculer-transport-pubsub",
+      "sourceRoot": "libs/moleculer-transport-pubsub/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/moleculer-transport-pubsub/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/moleculer-transport-pubsub/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/moleculer-transport-pubsub",
+            "tsConfig": "libs/moleculer-transport-pubsub/tsconfig.lib.json",
+            "packageJson": "libs/moleculer-transport-pubsub/package.json",
+            "main": "libs/moleculer-transport-pubsub/src/index.ts",
+            "assets": ["libs/moleculer-transport-pubsub/*.md"]
+          }
+        }
+      }
+    },
+    "moleculer-transport-gcp-subscription": {
+      "root": "libs/moleculer-transport-gcp-subscription",
+      "sourceRoot": "libs/moleculer-transport-gcp-subscription/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/moleculer-transport-gcp-subscription/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/moleculer-transport-gcp-subscription/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/moleculer-transport-gcp-subscription",
+            "tsConfig": "libs/moleculer-transport-gcp-subscription/tsconfig.lib.json",
+            "packageJson": "libs/moleculer-transport-gcp-subscription/package.json",
+            "main": "libs/moleculer-transport-gcp-subscription/src/index.ts",
+            "assets": ["libs/moleculer-transport-gcp-subscription/*.md"]
+          }
+        }
+      }
+    },
+    "functions": {
+      "root": "apps/functions",
+      "sourceRoot": "apps/functions/src",
+      "projectType": "application",
+      "prefix": "functions",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/functions",
+            "main": "apps/functions/src/main.ts",
+            "tsConfig": "apps/functions/tsconfig.app.json",
+            "assets": ["apps/functions/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/functions/src/environments/environment.ts",
+                  "with": "apps/functions/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "functions:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/functions/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/functions/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/node"
+  },
+  "defaultProject": "functions"
 }

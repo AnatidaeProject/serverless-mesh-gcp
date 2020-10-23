@@ -1,0 +1,33 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "functions": {
+    "predeploy": [
+      "npm run lint functions",
+      "npm run build functions --prod"
+    ],
+    "source": "/"
+  },
+  "emulators": {
+    "firestore": {
+      "port": 8080
+    },
+    "pubsub": {
+      "port": 8085
+    },
+    "functions": {
+      "port": "5001"
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

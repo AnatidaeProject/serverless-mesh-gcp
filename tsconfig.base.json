@@ -21,7 +21,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@anatidaeproject/moleculer-discoverer-firebase": [
+        "libs/moleculer-discoverer-firebase/src/index.ts"
+      ],
+      "@anatidaeproject/moleculer-transport-pubsub": [
+        "libs/moleculer-transport-pubsub/src/index.ts"
+      ],
+      "@anatidaeproject/moleculer-transport-gcp-subscription": [
+        "libs/moleculer-transport-gcp-subscription/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

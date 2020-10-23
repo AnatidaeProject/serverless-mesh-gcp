@@ -6,7 +6,19 @@
     "name": "Brian McBride",
     "url": "https://www.linkedin.com/in/brianmcbride/"
   },
-  "keywords": ["moleculer", "serverless", "cloud run", "cloud functions", "gcp", "mesh", "service disovery"],
+  "keywords": [
+    "moleculer",
+    "serverless",
+    "cloud run",
+    "cloud functions",
+    "gcp",
+    "mesh",
+    "service disovery"
+  ],
+  "main": "dist/apps/functions/main.js",
+  "engines": {
+    "node": "12"
+  },
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
@@ -28,21 +40,35 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "firebase:emulators": "firebase emulators:start",
+    "build:functions": "nx build functions --prod",
+    "build:functions:watch": "nx build functions --watch"
   },
   "private": true,
   "dependencies": {
+    "firebase-functions": "^3.11.0",
     "jest": "^26.6.1",
     "moleculer": "^0.14.11"
   },
   "devDependencies": {
     "@nrwl/cli": "10.3.1",
+    "@nrwl/eslint-plugin-nx": "10.3.1",
+    "@nrwl/jest": "10.3.1",
+    "@nrwl/node": "10.3.1",
     "@nrwl/workspace": "10.3.1",
     "@types/jest": "^26.0.15",
     "@types/node": "~14.14.2",
+    "@typescript-eslint/eslint-plugin": "4.3.0",
+    "@typescript-eslint/parser": "4.3.0",
     "dotenv": "8.2.0",
+    "dotenv-flow": "^3.2.0",
     "eslint": "7.11.0",
+    "eslint-config-prettier": "6.0.0",
+    "firebase-admin": "^9.3.0",
+    "jest": "26.2.2",
     "prettier": "2.1.2",
+    "ts-jest": "26.4.0",
     "ts-node": "~9.0.0",
     "tslint": "~6.0.0",
     "typescript": "~4.0.3"

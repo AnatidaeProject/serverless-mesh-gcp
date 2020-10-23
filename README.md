@@ -9,15 +9,49 @@ Creating an ephermal service mesh using 100% serverless PAAS solutions on GCP.
 - GCP Cloud PubSub
 - Firebase Realtime Database
 
-### Setup
+## Setup
 
-#### Install Firebase Tools
+### 1. Install Firebase Tools
 Make sure to install the emulators for testing.
 ```
 npm i -g firebase-tools
 ``` 
 
+Firebase can be a little picky about credentials, even when you are working locally.
+To this end, you will want to modify a few files and generate a service account key
 
+### 2. Service Account Key:
+Form the Firebase console, generate a service account key. This will be a JSON file. Mine looks like: `serverless-mesh-brianm-firebase-adminsdk-ezhk3-8eed18e18a.json`. Add that file to a top level folder called `__SECRETS__` or whatever else you feel like using.
+
+Modify the files so that the projet name is correct and the path to your secrets file is correct: 
+```
+.env.test
+.firebaserc
+```
+
+### 3. Install Dependencies
+Just like all NodeJS projects, install everything
+```
+npm install
+```
+----------
+## Running Demo
+
+### Functions
+In order to test the functions, build them with:
+```
+npm run build:functions
+```
+Or if you want to modify the code, you can start the watcher
+```
+npm run build:functions:watch
+```
+
+----------
+## Services Detail
+The NX tooling treats `apps` as deployable units. `libs` are shared libaries. In this case, the apps will represent a node. In the case of the `apps/functions` this will represent multiple nodes as Firebase Functions can deploy from a single entry point.
+
+Most of the logic for this demo will reside in `libs`
 
 ----------
 

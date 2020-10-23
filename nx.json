@@ -22,5 +22,18 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "moleculer-discoverer-firebase": {
+      "tags": ["moleculer", "module", "mesh"]
+    },
+    "moleculer-transport-pubsub": {
+      "tags": ["moleculer", "module", "mesh"]
+    },
+    "moleculer-transport-gcp-subscription": {
+      "tags": ["moleculer", "module", "mesh"]
+    },
+    "functions": {
+      "tags": ["molecular", "gcp"]
+    }
+  }
 }
