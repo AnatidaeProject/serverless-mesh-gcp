@@ -1,3 +1,3 @@
 export function moleculerTransportPubsub(): string {
-  return 'moleculer-transport-pubsub';
+    return "moleculer-transport-pubsub";
 }

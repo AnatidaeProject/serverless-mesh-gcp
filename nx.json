@@ -1,39 +1,42 @@
 {
-  "npmScope": "anatidaeproject",
-  "affected": {
-    "defaultBase": "master"
-  },
-  "implicitDependencies": {
-    "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
+    "npmScope": "anatidaeproject",
+    "affected": {
+        "defaultBase": "master"
     },
-    "tsconfig.base.json": "*",
-    "tslint.json": "*",
-    ".eslintrc.json": "*",
-    "nx.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+    "implicitDependencies": {
+        "workspace.json": "*",
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.base.json": "*",
+        "tslint.json": "*",
+        ".eslintrc.json": "*",
+        "nx.json": "*"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/workspace/tasks-runners/default",
+            "options": {
+                "cacheableOperations": ["build", "lint", "test", "e2e"]
+            }
+        }
+    },
+    "projects": {
+        "moleculer-discoverer-firebase": {
+            "tags": ["moleculer", "module", "mesh"]
+        },
+        "moleculer-transport-pubsub": {
+            "tags": ["moleculer", "module", "mesh"]
+        },
+        "moleculer-transport-gcp-subscription": {
+            "tags": ["moleculer", "module", "mesh"]
+        },
+        "functions": {
+            "tags": ["molecular", "gcp"]
+        },
+        "service-math": {
+            "tags": ["service", "molecular"]
+        }
     }
-  },
-  "projects": {
-    "moleculer-discoverer-firebase": {
-      "tags": ["moleculer", "module", "mesh"]
-    },
-    "moleculer-transport-pubsub": {
-      "tags": ["moleculer", "module", "mesh"]
-    },
-    "moleculer-transport-gcp-subscription": {
-      "tags": ["moleculer", "module", "mesh"]
-    },
-    "functions": {
-      "tags": ["molecular", "gcp"]
-    }
-  }
 }

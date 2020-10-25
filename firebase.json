@@ -17,6 +17,9 @@
     "source": "/"
   },
   "emulators": {
+    "database": {
+      "port": 9000
+    },
     "firestore": {
       "port": 8080
     },
@@ -24,7 +27,7 @@
       "port": 8085
     },
     "functions": {
-      "port": "5001"
+      "port": 5001
     },
     "ui": {
       "enabled": true

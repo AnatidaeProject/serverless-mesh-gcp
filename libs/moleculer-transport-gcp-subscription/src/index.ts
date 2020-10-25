@@ -1,1 +1,1 @@
-export * from './lib/moleculer-transport-gcp-subscription';
+export * from "./lib/moleculer-transport-gcp-subscription";

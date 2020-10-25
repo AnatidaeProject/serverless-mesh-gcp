@@ -1,5 +1,5 @@
 module.exports = {
-    displayName: "moleculer-transport-pubsub",
+    displayName: "service-math",
     preset: "../../jest.preset.js",
     globals: {
         "ts-jest": {
@@ -11,5 +11,5 @@ module.exports = {
         "^.+\\.[tj]sx?$": "ts-jest",
     },
     moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-    coverageDirectory: "../../coverage/libs/moleculer-transport-pubsub",
+    coverageDirectory: "../../coverage/libs/service-math",
 };

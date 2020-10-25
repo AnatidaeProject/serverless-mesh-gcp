@@ -1,1 +1,1 @@
-export * from './lib/moleculer-discoverer-firebase';
+export * from "./lib/moleculer-discoverer-firebase";

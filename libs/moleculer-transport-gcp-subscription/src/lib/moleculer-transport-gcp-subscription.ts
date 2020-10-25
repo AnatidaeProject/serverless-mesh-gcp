@@ -1,3 +1,3 @@
 export function moleculerTransportGcpSubscription(): string {
-  return 'moleculer-transport-gcp-subscription';
+    return "moleculer-transport-gcp-subscription";
 }
